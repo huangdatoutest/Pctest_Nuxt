@@ -1,0 +1,35 @@
+{
+  "name": "testCms",
+  "version": "1.0.0",
+  "description": "My mathematical Nuxt.js project",
+  "author": "Huang",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "config": {
+    "nuxt": {
+      "host": "192.168.1.118",
+      "port": 3000
+    }
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
+    "bootstrap-vue": "^2.6.1",
+    "element-ui": "^2.13.0",
+    "jquery": "^3.4.1",
+    "nuxt": "^2.0.0",
+    "postcss": "^7.0.27",
+    "postcss-loader": "^3.0.0",
+    "vue": "^2.6.11",
+    "vue-awesome-swiper": "^3.1.3"
+  },
+  "devDependencies": {
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0"
+  }
+}
