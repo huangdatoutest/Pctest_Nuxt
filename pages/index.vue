@@ -84,7 +84,25 @@
  </div>
 
   <div class="Htitle"><el-divider>新闻中心</el-divider></div>
-  <div class="main_center journalism"></div>
+  <div class="main_center journalism">
+        <div class="jou_left_box">
+          <div class="jou_title">新闻动态</div>
+          <div style="display: flex">
+            <div class="jou_img"></div>
+            <div class="jou_likn">
+              <ul>
+                <li>111111111111111111111111111111111111111111111</li>
+                <li>2222222222222222222222222222222222222222222222</li>
+                <li>33333333333333333333333333333333333333333333333</li>
+                <li>555555555555555555555555555555555555555555555555</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="jou_right_box">
+          <div class="jou_title">最新活动</div>
+        </div>
+  </div>
 
 
 
@@ -352,6 +370,41 @@ export default {
   }
 /*  新闻*/
   .journalism{
-
+    width: 100%;
+    border: 1px solid #FD6B9B ;
+    margin-bottom: 20px;
+    display: flex;
+    padding: 20px;
+    .jou_left_box{
+     width: 70%;
+      height: 500px;
+      margin: 1px;
+      border-right:2px #EDEDED dashed ;
+      .jou_img{
+        width: 389px;
+        height: 264px;
+        background: red;
+        display: block;
+        margin-right: 10px;
+      }
+      .jou_likn{
+        width: 200px;
+        li{
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          word-break: break-all;
+        }
+      }
+    }
+    .jou_right_box{
+      width: 40%;
+      height: 500px;
+      margin: 1px;
+    }
+    .jou_title{
+      margin-bottom: 20px;
+      text-align: left;
+    }
   }
 </style>
