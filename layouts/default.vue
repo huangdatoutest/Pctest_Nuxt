@@ -287,5 +287,8 @@
         margin-right: 0!important;
       }
     }
+    .footer_right{
+      margin: 0px!important;
+    }
   }
 </style>

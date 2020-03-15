@@ -8,7 +8,7 @@
         </el-carousel-item>
       </el-carousel>
     </div>
-<!--  <div><img src="~/static/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg" alt=""></div>-->
+<!--  <div><img src="~/assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg" alt=""></div>-->
   <div class="sliding_block ">
     <div v-swiper:mySwiper="swiperOption">
 <!--      图片-->
@@ -183,10 +183,10 @@ export default {
     return {
 
       Swiperlsit:[
-        {ImgName:require('static/img/timg.jpg')},
-        {ImgName:require('static/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg')},
-        {ImgName:require('static/img/timg.jpg')},
-        {ImgName:require('static/img/timg.jpg')},
+        {ImgName:require('assets/img/timg.jpg')},
+        {ImgName:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg')},
+        {ImgName:require('assets/img/timg.jpg')},
+        {ImgName:require('assets/img/timg.jpg')},
       ],
       // 轮播图配置信息, 更多请参考 swiper.js 中文网，上面很详细。
       swiperOption: {
@@ -211,27 +211,27 @@ export default {
       //案例
       showDrawer:false, // 抽屉
       caseList:[
-        {caseImgName:require('static/img/timg.jpg'),casetext:'图片直播'},
-        {caseImgName:require('static/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),casetext:'图片直播'},
-        {caseImgName:require('static/img/timg.jpg'),casetext:'图片直播'},
-        {caseImgName:require('static/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),casetext:'图片直播'},
+        {caseImgName:require('assets/img/timg.jpg'),casetext:'图片直播'},
+        {caseImgName:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),casetext:'图片直播'},
+        {caseImgName:require('assets/img/timg.jpg'),casetext:'图片直播'},
+        {caseImgName:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),casetext:'图片直播'},
       ],
     //  功能展示
       fcnlsit:[
-        {fcnName:require('static/img/timg.jpg'),text:'图片直播'},
-        {fcnName:require('static/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),text:'图片直播'},
-        {fcnName:require('static/img/timg.jpg'),text:'图片直播'},
-        {fcnName:require('static/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),text:'图片直播'},
-        {fcnName:require('static/img/timg.jpg'),text:'图片直播'},
-        {fcnName:require('static/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),text:'图片直播'},
-        {fcnName:require('static/img/timg.jpg'),text:'图片直播'},
-        {fcnName:require('static/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),text:'图片直播'},
+        {fcnName:require('assets/img/timg.jpg'),text:'图片直播'},
+        {fcnName:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),text:'图片直播'},
+        {fcnName:require('assets/img/timg.jpg'),text:'图片直播'},
+        {fcnName:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),text:'图片直播'},
+        {fcnName:require('assets/img/timg.jpg'),text:'图片直播'},
+        {fcnName:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),text:'图片直播'},
+        {fcnName:require('assets/img/timg.jpg'),text:'图片直播'},
+        {fcnName:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),text:'图片直播'},
       ],
     //  业务
       businessList:[
-        {busImgName:require('static/img/timg.jpg'),bustext:'图片直播',type:'top'},
-        {busImgName:'图片直播',bustext:require('static/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),type:'bottom'},
-        {busImgName:require('static/img/timg.jpg'),bustext:'图片直播',type:'top'},
+        {busImgName:require('assets/img/timg.jpg'),bustext:'图片直播',type:'top'},
+        {busImgName:'图片直播',bustext:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),type:'bottom'},
+        {busImgName:require('assets/img/timg.jpg'),bustext:'图片直播',type:'top'},
       ]
     }
   },
@@ -264,7 +264,7 @@ export default {
 <style scoped lang="less">
   /*块*/
   .block_box{
-    padding: 120px 0 104px 0
+    padding: 50px 0 104px 0
   }
  /deep/ .el-carousel__container{
       width: 100%;
@@ -516,6 +516,9 @@ export default {
         padding: 0;
       }
     }
-
+/*    模块间距*/
+    .block_box{
+      padding: 20px;
+    }
 }
 </style>
