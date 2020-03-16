@@ -2,42 +2,54 @@
 <div>
 <!--  轮播-->
    <div class="block">
-      <el-carousel class="swiper">
-        <el-carousel-item v-for="(item,index) in Swiperlsit" :key="index">
-          <img class="swiper_img" :src="item.ImgName" alt="">
-        </el-carousel-item>
-      </el-carousel>
-    </div>
-<!--  <div><img src="~/assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg" alt=""></div>-->
-  <div class="sliding_block ">
-    <div v-swiper:mySwiper="swiperOption">
-<!--      图片-->
-      <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="banner in Swiperlsit">
-          <img :src="banner.ImgName">
+<!--     <el-carousel :interval="3000"  arrow="always" id="el-carousel">-->
+<!--       <el-carousel-item v-for="(item,index) in Swiperlsit" :key="index">-->
+<!--         <img class="swiper_img" :src="item.ImgName" alt="">-->
+<!--       </el-carousel-item>-->
+<!--     </el-carousel>-->
+     <div>
+       <img style="height: 100%;width: 100%" src="~assets/img/swiper_img.png" alt="">
+     </div>
+   </div>
+
+  <div class="sliding_box">
+    <div class="sliding_box_bg">
+      <div class="sliding_block ">
+        <div v-swiper:mySwiper="swiperOption">
+          <!--      图片-->
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="item in sliding">
+              <div style="width: 100%;height: 100%;background: red">
+
+<!--                <div class="slide_tex">1111111</div>-->
+<!--                <div class="sliding_block_data"></div>-->
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-pagination swiper-pagination-bullets"></div>
+          <div class="dd">
+            <!--      点点-->
+            <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper-container外面，需要自定义样式。-->
+            <div class="swiper-button-next"></div><!--右箭头。如果放置在swiper-container外面，需要自定义样式。-->
+          </div>
         </div>
       </div>
-      <div class="dd">
-        <!--      点点-->
-         <div class="swiper-pagination swiper-pagination-bullets"></div>
-        <div class="swiper-button-prev"><</div><!--左箭头。如果放置在swiper-container外面，需要自定义样式。-->
-        <div class="swiper-button-next">></div><!--右箭头。如果放置在swiper-container外面，需要自定义样式。-->
-      </div>
     </div>
-
   </div>
-<!--案例-->
-  <div>
 
+
+  <div class="kong_box"></div>
+<!--案例-->
+<!--  <div>-->
 <!--    <div class="Htitle"><el-divider>案例展示</el-divider></div>-->
 <!--    <div class="case_box_fu">-->
-<!--      &lt;!&ndash;    <div @click="mver = !mver">1</div>&ndash;&gt;-->
 <!--      <el-row style="margin: 0" >-->
 <!--        <el-col :xs="24" :sm="6" :lg="6"  :xl="6" v-for="(item,index) in caseList" :key="index">-->
 <!--          &lt;!&ndash;        @mouseover="changeActive()" @mouseout="removeActive()"&ndash;&gt;-->
 <!--          <div  class="case_box_show" >-->
 <!--            <transition name="slide-img">-->
-<!--              <img :src="item.caseImgName"  v-if="!showDrawer" alt=""  @mouseover="changeActive(index)">-->
+<!--              <img :src="item.caseImgName"  v-if="!showDrawer" alt="" >-->
 <!--            </transition>-->
 <!--            <transition name="slide-fade">-->
 <!--              <img :src="item.caseImgName"  v-if="!showDrawer" alt="">-->
@@ -47,41 +59,41 @@
 <!--        </el-col>-->
 <!--      </el-row>-->
 <!--    </div>-->
-  </div>
+<!--  </div>-->
+<!---->
+<!--功能-->
   <div class="block_box">
     <div class="Htitle"><el-divider>功能展示</el-divider></div>
     <div class="main_center fcn_box">
     <el-row style="margin: 0" :gutter="10">
       <el-col :xs="12" :sm="6" :lg="6"  :xl="6" v-for="(item,index) in fcnlsit" :key="index">
-
-        <el-popover
-          placement="top-start"
-          title=""
-          width="200"
-          trigger="hover"
-          >
-          <div><img class="fcnName" :src="item.fcnName" alt=""></div>
-          <el-button slot="reference"> <img class="fcnName" :src="item.fcnName" alt=""></el-button>
-        </el-popover>
-        <div>{{item.text}}</div>
+        <div class="fun_quan">
+          <img class="fcn_img" :src="item.fcnName" alt="">
+        </div>
+        <div class="fun_text">{{item.text}}</div>
       </el-col>
     </el-row>
   </div>
   </div>
+<!--业务-->
 
-  <div  class="block_box" style=" background: #F1F1F1;">
-    <div class="Htitle"><el-divider class="bus_title">业务模块</el-divider></div>
-    <div class="main_center business_box">
+  <div class=" business_box">
+    <div class="main_center">
+      <div class="Htitle"><el-divider class="bus_title">业务模块</el-divider></div>
       <el-row style="margin: 0">
         <el-col  :xs="24" :sm="8" :lg="8"  :xl="8" v-for="(item,index) in businessList" :key="index">
           <div class="business">
             <div class="bus_top">
               <img v-if="item.type === 'top'" :src="item.busImgName" alt="">
-              <span v-else> {{item.busImgName}}</span>
+              <div class="bus_tex" v-else>
+                <span > {{ item.busImgName}}</span>
+              </div>
             </div>
             <div class="bus_bottom">
               <img v-if="item.type === 'bottom'" :src="item.bustext" alt="">
-              <span v-else> {{item.bustext}}</span>
+              <div class="bus_tex" v-else>
+                <span > {{item.bustext}}</span>
+              </div>
             </div>
           </div>
         </el-col>
@@ -183,11 +195,19 @@ export default {
     return {
 
       Swiperlsit:[
-        {ImgName:require('assets/img/timg.jpg')},
-        {ImgName:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg')},
-        {ImgName:require('assets/img/timg.jpg')},
-        {ImgName:require('assets/img/timg.jpg')},
+        {ImgName:require('assets/img/swiper_img.png')},
+        {ImgName:require('assets/img/swiper_img.png')},
+        {ImgName:require('assets/img/swiper_img.png')},
+        {ImgName:require('assets/img/swiper_img.png')},
       ],
+      sliding:[
+        {sliImgName:require('assets/img/sliding.jpg')},
+        // {sliImgName:require('assets/img/sliding.jpg')},
+        // {sliImgName:require('assets/img/sliding.jpg')},
+        // {sliImgName:require('assets/img/sliding.jpg')},
+      ],
+      bannerHeight: 600,
+      screenWidth: 1920,
       // 轮播图配置信息, 更多请参考 swiper.js 中文网，上面很详细。
       swiperOption: {
         loop : true,
@@ -218,14 +238,14 @@ export default {
       ],
     //  功能展示
       fcnlsit:[
-        {fcnName:require('assets/img/timg.jpg'),text:'图片直播'},
-        {fcnName:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),text:'图片直播'},
-        {fcnName:require('assets/img/timg.jpg'),text:'图片直播'},
-        {fcnName:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),text:'图片直播'},
-        {fcnName:require('assets/img/timg.jpg'),text:'图片直播'},
-        {fcnName:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),text:'图片直播'},
-        {fcnName:require('assets/img/timg.jpg'),text:'图片直播'},
-        {fcnName:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),text:'图片直播'},
+        {fcnName:require('assets/img/fun_icon1.png'),text:'视频直播'},
+        {fcnName:require('assets/img/fun_icon2.png'),text:'在线报名'},
+        {fcnName:require('assets/img/fun_icon3.png'),text:'DIY定制'},
+        {fcnName:require('assets/img/fun_icon4.png'),text:'动态发布'},
+        {fcnName:require('assets/img/fun_icon5.png'),text:'导师团队'},
+        {fcnName:require('assets/img/fun_icon6.png'),text:'积分商城'},
+        {fcnName:require('assets/img/fun_icon7.png'),text:'虚拟打赏'},
+        {fcnName:require('assets/img/fun_icon8.png'),text:'图片直播'},
       ],
     //  业务
       businessList:[
@@ -245,11 +265,54 @@ export default {
         {name: 'viewport', content: 'width=device-width, initial-scale=1'},
         {hid: 'description', name: 'description', content:"aaa"},
         {name: 'keywords', content: "11111"},
+      ],
+      script: [
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
       ]
     }
   },
-
+  // beforeMount() {
+  //   this.screenWidth = this.getwidth();
+  //   //图片                高 / 宽  700 / 1920
+  //   this.bannerHeight = (700 / 1920) * this.screenWidth - 50;
+  //   console.log('bannerHeight', this.bannerHeight)
+  // },
+  // mounted() {
+  //   const that = this;
+  //   document.getElementById("el-carousel").style.height =
+  //     this.bannerHeight + "px";
+  //   //监听浏览器窗口大小改变
+  //   window.addEventListener(
+  //     "resize",
+  //     function () {
+  //       that.screenWidth = that.getwidth();
+  //       that.setSize();
+  //     },
+  //     false
+  //   );
+  //   $("body").append("1");
+  // },
   methods:{
+    getwidth() {
+      var width =
+        window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth;
+      return width;
+    },
+
+    setSize: function () {
+      this.bannerHeight = (700 / 1920) * this.screenWidth - 50;
+      document.getElementById("el-carousel").style.height =
+        this.bannerHeight + "px";
+    },
+
+
+
+
+
+
+
     changeActive (index) {
       this.showDrawer = true
       console.log(index)
@@ -266,71 +329,75 @@ export default {
   .block_box{
     padding: 50px 0 104px 0
   }
- /deep/ .el-carousel__container{
-      width: 100%;
-     height:0;
-     padding-bottom:30%;
+  /*轮播*/
+ /deep/ .el-carousel__container {
+    height: 100% !important;
   }
- .swiper_img{
-   width: 100%;
-   max-height: 600px;
- }
-  /*@media only screen and (min-width: 641px) and (max-width: 1200px) {*/
-  /*  /deep/ .el-carousel__container{*/
-  /*    width: 100%;*/
-  /*    height:400px;*/
-  /*  }*/
-  /*}*/
-  .dd{
-    width: 200px;
-    height: 20px;
-    position: absolute;
-    z-index: 99;
-    bottom: 5%;
-    right: 5%;
+  .swiper_img{
+    display: inline-block;
+    height: 100%;
+    max-width: 100%;
   }
   /*滑块*/
+  .kong_box{
+    height: 964px;
+  }
   .sliding_block{
     position: relative;
   }
+  .sliding_box{
+    position: relative;
+  }
+  .sliding_box_bg{
+    background: url('~assets/img/sliding.jpg') no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  /*滑动的框*/
+
   .swiper-wrapper{
     width: 100%;
-    height:0;
+    /*height:0;*/
     padding-bottom:50%;
     .swiper-slide{
-      img{
-        width: 100%;
-        max-height: 946px;
-        -o-object-fit: cover;
-        object-fit: cover;
+      /*display: flex;*/
+      .slide_tex{
+        flex: 1;
+        background: red;
+      }
+      .sliding_block_data{
+       flex: 1;
+        background: yellow;
       }
     }
   }
-  /*左右箭头*/
-  /deep/ .swiper-button-next,  .swiper-button-prev{
-    width: 20px;
-    height: 20px;
-    background: red;
-    bottom:0;
-    top: auto;
+  /deep/ .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+    background: url('~assets/img/sliding_l.png') no-repeat;
+    background-size: 100% 100%;
     left: auto;
+    right:460px;
+    width:40px;
+    height:40px;
+    bottom: 44px;
   }
-  /*左*/
-  /deep/ .swiper-button-prev{
-    right: 55px;
+  /deep/ .swiper-button-next, .swiper-container-rtl .swiper-button-prev{
+    background: url('~assets/img/sliding_r.png') no-repeat;
+    background-size: 100% 100%;
+    right: 400px;
+    left: auto;
+    width:40px;
+    height:40px;
+    bottom: 44px;
   }
-  /*右*/
-  /deep/ .swiper-button-next{
-    right: 20px;
-  }
-  /*点点*/
-  /deep/ .swiper-pagination{
-    bottom:0;
-    top: 0;
-    left: 0;
-    span{
-      margin: 0 5px;
-    }
+  /deep/ .swiper-button-prev, .swiper-button-next{
+    top: auto;
   }
   /*案例*/
 
@@ -404,46 +471,70 @@ export default {
     opacity: 0;
   }
 /*  功能展示*/
-  .fcnName{
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin: 10px;
-}
+  .fun_quan{
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    background: #FD578E;
+    text-align: center;
+    margin: auto auto;
+    display: flex;
+  }
+  .fcn_img{
+    width: 50%;
+    margin: auto;
+  }
   .fcn_box{
-    /deep/ .el-button:focus, .el-button:hover{
-      background: none;
-
-    }
-    /deep/ .el-button{
-      border: none;
-    }
+    text-align: center;
+  }
+  .fun_text{
+    font-size:22px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    margin: 21px 0 80px;
+  }
+  .fun_quan:hover{
+    background: red;
   }
 /*  业务*/
-  .bus_title{
-    /deep/ .el-divider__text{
-      background: #F1F1F1!important;
-    }
-  }
+
   .business_box{
-    .business{
-        width: 100%;
-        height: 380px;
-        margin: 0 auto;
-        background: red;
+    width: 100%;
+    height:866px;
+    padding: 137px 0 104px 0;
+    background:rgba(241,241,241,1);
+    .Htitle /deep/ .el-divider__text{
+      background:rgba(241,241,241,1);
     }
-    .bus_bottom, .bus_top{
-      width: 100%;
-      height: 50%;
-      img{
+    .business{
+      height:560px;
+      background:red;
+      box-shadow:0px 1px 24px 0px rgba(198,198,198,0.32);
+      .bus_top, .bus_bottom{
+        height:280px;
+        background: #ffffff;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .bus_tex{
         width: 100%;
         height: 100%;
+        display: flex;
+        span{
+          margin: auto;
+          font-size:34px;
+          font-family:Microsoft YaHei;
+          font-weight:400;
+          color:rgba(51,51,51,1);
+        }
       }
-    }
-    .bus_top{
-      background: yellow;
-    }
-    .bus_bottom{
+      .bus_top{
+      }
+      .bus_bottom{
+      }
     }
   }
 /*  新闻*/
@@ -520,5 +611,19 @@ export default {
     .block_box{
       padding: 20px;
     }
+    /deep/ .el-carousel {
+      min-height: 200px!important;
+    }
+    .kong_box{
+      height: 0px;
+    }
 }
+  @media screen and (max-width: 360px) {
+
+    /deep/ .el-carousel {
+      min-height: 150px!important;
+    }
+  }
+
+
 </style>

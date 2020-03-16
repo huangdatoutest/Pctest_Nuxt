@@ -133,10 +133,12 @@
   *,
   *:before,
   *:after {
-    font-family:Microsoft YaHei;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+  }
+  *{
+    font-family:Microsoft YaHei;
   }
   li{
     list-style-type: none;
@@ -156,7 +158,7 @@
     color: #333;
     text-align: center;
     padding: 0;
-    min-height: 1200px;
+    /*min-height: 1200px;*/
     margin-top:80px
   }
 

@@ -1,21 +1,28 @@
 <template >
  <div>
-   <div @click="getShareConfig" >
-     点击
+   <div class=" business_box">
+     <div class="main_center">
+       <div class="Htitle"><el-divider class="bus_title">业务模块</el-divider></div>
+       <el-row style="margin: 0">
+         <el-col  :xs="24" :sm="8" :lg="8"  :xl="8" v-for="(item,index) in businessList" :key="index">
+           <div class="business">
+             <div class="bus_top">
+               <img v-if="item.type === 'top'" :src="item.busImgName" alt="">
+               <div class="bus_tex" v-else>
+                 <span > {{ item.busImgName}}</span>
+               </div>
+             </div>
+             <div class="bus_bottom">
+               <img v-if="item.type === 'bottom'" :src="item.bustext" alt="">
+               <div class="bus_tex" v-else>
+                 <span > {{item.bustext}}</span>
+               </div>
+             </div>
+           </div>
+         </el-col>
+       </el-row>
+     </div>
    </div>
-   <div  class="case_box" style="background: yellow;position: relative;overflow: hidden"  @mouseover="changeActive()" >
-     <transition name="slide-fade">
-       <div  v-if="showDrawer" @mouseout="removeActive()" class="case_box" >
-
-       </div>
-     </transition>
-   </div>
-   <br>
-   <br>
-   <br>
-   <br>
-   <div class="test-hover"></div>
-   <div class="testgif"></div>
  </div>
 
 </template>
@@ -24,82 +31,61 @@
   export default {
     data() {
       return{
-        showDrawer:false, // 抽屉
+        //  业务
+        businessList:[
+          {busImgName:require('assets/img/timg.jpg'),bustext:'图片直播',type:'top'},
+          {busImgName:'图片直播',bustext:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),type:'bottom'},
+          {busImgName:require('assets/img/timg.jpg'),bustext:'图片直播',type:'top'},
+        ]
       }
     },
     mounted () {
     },
     methods:{
 
-      getShareConfig() {
-        this.showDrawer = !this.showDrawer
-
-      },
-      changeActive () {
-        this.showDrawer = true
-      },
-      removeActive () {
-        this.showDrawer = false
-      }
     }
   };
 </script>
 
 
 <style scoped lang="less">
-  /* 可以设置不同的进入和离开动画 */
-  /* 设置持续时间和动画函数 */
-  .slide-fade-enter-active {
-    transition: all .5s ease;
-  }
-  .slide-fade-leave-active {
-    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  }
-  .slide-fade-enter, .slide-fade-leave-to/* .slide-fade-leave-active for below version 2.1.8 */ {
-    transform: translatey(200px);
-    opacity: 0;
-  }
-
-  .case_box{
-    width: 350px;
-    margin: 0 auto;
-    height: 350px;
-    position: absolute;
-    background: red;
-  }
-
-  .test-hover, .test-hover1{
-    width: 100px;
-    height: 100px;
-    background: #dddddd;
-  }
-  .test-hover1:hover{
-    background: yellow;
-    content: '';
-    display: block;
-  }
-  .test-hover:hover::after{
-    background: red;
-    content: '';
-    display: block;
-    animation: first 3s;
-  }
-  @keyframes first{
-    from{
-      height:0px;
-     }to{
-       height:100px;
-        display: block;
-     }
-  }
-  .testgif{
-    width: 380px;
-    height: 400px;
-    background: url("/img/1584072240(1).jpg") no-repeat ;
-    background-size:100% 100% ;
-  }
-  .testgif:hover{
-    background: url("/img/timg.gif") no-repeat;
+  .business_box{
+    width: 100%;
+    height:866px;
+    padding: 137px 0 104px 0;
+    background:rgba(241,241,241,1);
+    .Htitle /deep/ .el-divider__text{
+      background:rgba(241,241,241,1);
+    }
+    .business{
+      height:560px;
+      background:red;
+      box-shadow:0px 1px 24px 0px rgba(198,198,198,0.32);
+      .bus_top, .bus_bottom{
+        height:280px;
+        background: #ffffff;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .bus_tex{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        span{
+          margin: auto;
+          font-size:34px;
+          font-family:Microsoft YaHei;
+          font-weight:400;
+          color:rgba(51,51,51,1);
+        }
+      }
+      .bus_top{
+      }
+      .bus_bottom{
+      }
+    }
   }
 </style>
 
