@@ -110,7 +110,7 @@
             <div class="jou_img"></div>
             <div class="jou_likn">
               <ul>
-                <li>111111111111111111111111111111111111111111111</li>
+                <li>1111111</li>
                 <li>2222222222222222222222222222222222222222222222</li>
                 <li>33333333333333333333333333333333333333333333333</li>
                 <li>555555555555555555555555555555555555555555555555</li>
@@ -134,7 +134,7 @@
               </ul>
             </div>
           </div>
-          <div style="text-align: right;margin-right: 20px">更多>>></div>
+          <div style="text-align: right;margin-right: 20px">more></div>
         </div>
         <div class="jou_right_box">
           <div class="jou_title">最新活动</div>
@@ -150,35 +150,9 @@
             <li>111111111111111111111111111111111111111111111111111111</li>
             <li>111111111111111111111111111111111111111111111111111111</li>
           </ul>
-          <div style="text-align: right;margin-right: 20px">更多>>></div>
+          <div style="text-align: right;margin-right: 20px">more></div>
         </div>
   </div>
-  </div>
-
-
-
-
-  <div>
-<!--    <el-row style="margin: 0" :gutter="10">-->
-<!--      &lt;!&ndash;-->
-<!--      xs	<768px 响应式栅格数或者栅格属性对象-->
-<!--      sm	≥768px 响应式栅格数或者栅格属性对象-->
-<!--      md	≥992px 响应式栅格数或者栅格属性对象-->
-<!--      lg	≥1200px 响应式栅格数或者栅格属性对象-->
-<!--      xl	≥1920px 响应式栅格数或者栅格属性对象-->
-<!--      &ndash;&gt;-->
-
-<!--      <el-col :xs="12" :sm="12" :lg="6"  :xl="6" v-for="(item,index) in list" :key="index">-->
-<!--        <div class="aa">-->
-<!--          <div>{{item.name}}</div>-->
-<!--        </div>-->
-<!--      </el-col>-->
-<!--    </el-row>-->
-<!--    <div>-->
-<!--      <NuxtLink :to="{ path: '/product', query: { id:111111 }}">-->
-<!--        Child 123-->
-<!--      </NuxtLink>-->
-<!--    </div>-->
   </div>
 </div>
 </template>
@@ -543,7 +517,19 @@ export default {
     border: 1px solid #FD6B9B ;
     margin-bottom: 20px;
     display: flex;
-    padding: 20px;
+    padding: 28px;
+    li{
+      list-style-type:disc!important;
+      text-align: left;
+      font-size:12px;
+      font-family:Microsoft YaHei;
+      font-weight:400;
+      line-height:31px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-all;
+    }
     .jou_left_box{
      width: 70%;
       margin:0 20px 0 0 ;
@@ -557,14 +543,9 @@ export default {
       }
       .jou_likn{
         width: 200px;
-        height: 264px;
+        height: 272px;
         overflow: hidden;
-        li{
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          word-break: break-all;
-        }
+        margin-left: 20px;
       }
     }
     .jou_right_box{
@@ -575,6 +556,11 @@ export default {
     .jou_title{
       margin-bottom: 20px;
       text-align: left;
+      font-size:20px;
+      font-family:Microsoft YaHei;
+      font-weight:400;
+      color:rgba(51,51,51,1);
+      line-height:31px;
     }
     .activity_img{
       width: 100%;
@@ -584,12 +570,6 @@ export default {
     .activity_likn{
       height: 98px;
       overflow: hidden;
-      li{
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        word-break: break-all;
-      }
     }
   }
 /*  新闻的媒体查询*/

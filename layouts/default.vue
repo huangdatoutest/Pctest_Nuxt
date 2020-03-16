@@ -52,14 +52,14 @@
           <nuxt />
         </div>
       </el-main>
-      <el-footer style="min-height: 60px;height: auto">
+      <el-footer>
         <div class="main_center footer_box">
           <el-row style="margin: 0" :gutter="10">
             <el-col  :xs="24" :sm="12" :lg="12"  :xl="12">
               <div class="footer_left">
                 <div class="Qrcode">
+                  <p>关注我们</p>
                   <div></div>
-                  <p>关注微信公众号</p>
                 </div>
                 <div class="footer_link">
                   <p class="footer_title">关于我们</p>
@@ -75,12 +75,15 @@
             <el-col  :xs="24" :sm="12" :lg="12"  :xl="12">
               <div class="footer_right">
                 <p class="footer_title">客服服务</p>
-                <p>直播合作：0755-2906-6609</p>
+                <p>直播合作：<span style="color: #FD578E">0755-2906-6609</span></p>
                 <p>公司地址：广东省深圳市福田区八卦二路535栋509</p>
               </div>
-              <p></p>
             </el-col>
           </el-row>
+          <div class="ICP">
+            <hr style="background: #EAEAEA">
+            粤ICP备15026053号-8 深圳宣美互联文化科技有限公司版权所有@2020-2021 https://www.xm-hulian.cn
+          </div>
         </div>
       </el-footer>
     </el-container>
@@ -152,7 +155,8 @@
     background: #333333;
     color: #ffffff;
     padding: 20px 0 ;
-    min-height: 60px;
+    height:260px!important;
+    margin: 0;
   }
   .el-main {
     color: #333;
@@ -224,19 +228,27 @@
 
   /*底部*/
   .footer_box{
-    padding: 10px;
     .footer_left{
       display: flex;
       .Qrcode{
-        margin: 0 20px 0 0;
+        margin: 0 60px 0 0;
         text-align: center;
         div{
-          width: 130px;
-          height: 130px;
+          width:130px;
+          height:130px;
           background: red;
+          img{
+            width: 100%;
+            height: 100%;
+          }
         }
       }
       .footer_link{
+        font-size:14px;
+        font-family:Microsoft YaHei;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+        line-height:31px;
         p:hover{
           color:#A24664 ;
           cursor: pointer;
@@ -245,9 +257,27 @@
     }
     .footer_right{
       margin: 0 0 0 130px;
+      p{
+        font-size:14px;
+        font-family:Microsoft YaHei;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+        line-height:31px;
+      }
     }
     .footer_title{
-      font-size: 24px;
+      font-size:20px!important;
+      font-family:Microsoft YaHei;
+      font-weight:400;
+      color:rgba(255,255,255,1);
+      line-height:31px;
+    }
+    .ICP{
+      font-size:12px;
+      font-family:Microsoft YaHei;
+      font-weight:400;
+      color:rgba(255,255,255,1);
+      text-align: center;
     }
   }
   /*标题*/

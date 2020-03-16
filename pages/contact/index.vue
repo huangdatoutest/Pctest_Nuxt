@@ -3,7 +3,7 @@
     <div class="c_box">
       <img class="logo" src="~assets/img/logo1.png" alt="">
       <div class="content">
-        <div style="display: none">
+        <div v-if="!show">
           <h2>宣美互联——互联网解决方案的领导者</h2>
           <br>
           <br>
@@ -12,45 +12,47 @@
           <p>涵盖APP开发,软件开发,HTML5开发,微信开发,运营推广等专业服务。</p>
           <p>未来属于强者，属于具有战略眼光的人，我们将和众多服务客户及合作伙伴</p>
           <p>共同成长，一起见证中国移动互联网的伟大变革。</p>
-          <img class="contact_xia" src="~assets/img/contact_xia.png" alt="">
+          <img class="contact_xia"  @click="show = !show" src="~assets/img/contact_xia.png" alt="">
         </div>
-        <div>
-          <ul class="form_box">
-            <li>
-              <span class="name">公司名称：</span>
-              <span>
-                <input type="text" placeholder="请输入公司名称">
-              </span>
-            </li>
-            <li>
-              <span  class="name">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span>
-              <span>
-                 <input type="text" placeholder="请输入姓名">
-              </span>
-            </li>
-            <li>
-              <span  class="name">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：</span>
-              <span>
-                 <input type="text" placeholder="请输入电话号码">
-              </span>
-            </li>
-            <li>
-              <div class="name">
-                行业类别选择：
-              </div>
-              <div>
-                <el-radio v-model="radio" label="1">选美公司</el-radio>
-                <el-radio v-model="radio" label="2">培训公司</el-radio>
-                <el-radio v-model="radio" label="3">活动公司</el-radio>
-                <el-radio v-model="radio" label="4">其他</el-radio>
-              </div>
-              <p>
+        <transition name="contact-fade">
+          <div v-if="show">
+            <ul class="form_box">
+              <li>
+                <span class="name">公司名称：</span>
+                <span>
+                  <input type="text" placeholder="请输入公司名称">
+                </span>
+              </li>
+              <li>
+                <span  class="name">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span>
+                <span>
+                   <input type="text" placeholder="请输入姓名">
+                </span>
+              </li>
+              <li>
+                <span  class="name">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：</span>
+                <span>
+                   <input type="text" placeholder="请输入电话号码">
+                </span>
+              </li>
+              <li>
+                <div class="name">
+                  行业类别选择：
+                </div>
+                <div>
+                  <el-radio v-model="radio" label="1">选美公司</el-radio>
+                  <el-radio v-model="radio" label="2">培训公司</el-radio>
+                  <el-radio v-model="radio" label="3">活动公司</el-radio>
+                  <el-radio v-model="radio" label="4">其他</el-radio>
+                </div>
+                <p>
 
-              </p>
-            </li>
-            <img class="contact_l" src="~assets/img/contact_l.png" alt="">
-          </ul>
-        </div>
+                </p>
+              </li>
+              <img class="contact_l" @click="show = !show" src="~assets/img/contact_l.png" alt="">
+            </ul>
+          </div>
+        </transition>
       </div>
 
      <button class="c_btn">加入我们</button>
@@ -63,10 +65,16 @@
         name: "index",
       data () {
         return {
-          radio: '1'
+          radio: '1',
+          show: false,
         }
         },
       mounted() {
+      },
+      methods:{
+        toform() {
+          this.show = true
+        }
       }
     }
 </script>
@@ -94,6 +102,7 @@
     margin: 0 auto;
     text-align: center;
     padding: 48px 0;
+    overflow: hidden;
     h2{
       height:35px;
       font-size:36px;
@@ -174,5 +183,17 @@
     font-weight:400;
     color:rgba(51,51,51,1);
     line-height:31px;
+  }
+
+
+  .contact-fade-enter-active {
+    transition: all .5s ease;
+  }
+  .contact-fade-leave-active {
+    opacity: 0;
+  }
+  .contact-fade-enter, .contact-fade-leave-to {
+    transform: translateX(1000px);
+    opacity: 0;
   }
 </style>
