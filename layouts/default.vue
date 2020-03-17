@@ -59,7 +59,7 @@
               <div class="footer_left">
                 <div class="Qrcode">
                   <p>关注我们</p>
-                  <div></div>
+                  <div><img src="~assets/img/OfficialAccounts.png" alt=""></div>
                 </div>
                 <div class="footer_link">
                   <p class="footer_title">关于我们</p>
@@ -155,7 +155,7 @@
     background: #333333;
     color: #ffffff;
     padding: 20px 0 ;
-    height:260px!important;
+    height:100%!important;
     margin: 0;
   }
   .el-main {
@@ -236,7 +236,6 @@
         div{
           width:130px;
           height:130px;
-          background: red;
           img{
             width: 100%;
             height: 100%;
@@ -321,6 +320,9 @@
     }
     .footer_right{
       margin: 0px!important;
+    }
+    .el-footer{
+      display: none;
     }
   }
 </style>

@@ -21,8 +21,8 @@
             <div class="swiper-slide" v-for="item in sliding">
               <div style="width: 100%;height: 100%;background: red">
 
-<!--                <div class="slide_tex">1111111</div>-->
-<!--                <div class="sliding_block_data"></div>-->
+                <div class="slide_tex">1111111</div>
+                <div class="sliding_block_data"></div>
               </div>
 
             </div>
@@ -39,28 +39,31 @@
   </div>
 
 
-  <div class="kong_box"></div>
+<!--  <div class="kong_box"></div>-->
 <!--案例-->
-<!--  <div>-->
-<!--    <div class="Htitle"><el-divider>案例展示</el-divider></div>-->
-<!--    <div class="case_box_fu">-->
-<!--      <el-row style="margin: 0" >-->
-<!--        <el-col :xs="24" :sm="6" :lg="6"  :xl="6" v-for="(item,index) in caseList" :key="index">-->
-<!--          &lt;!&ndash;        @mouseover="changeActive()" @mouseout="removeActive()"&ndash;&gt;-->
-<!--          <div  class="case_box_show" >-->
-<!--            <transition name="slide-img">-->
-<!--              <img :src="item.caseImgName"  v-if="!showDrawer" alt="" >-->
-<!--            </transition>-->
-<!--            <transition name="slide-fade">-->
-<!--              <img :src="item.caseImgName"  v-if="!showDrawer" alt="">-->
-<!--              <div @mouseout="removeActive(index)"  v-if="showDrawer"  class="case_box" ></div>-->
-<!--            </transition>-->
-<!--          </div>-->
-<!--        </el-col>-->
-<!--      </el-row>-->
-<!--    </div>-->
-<!--  </div>-->
-<!---->
+
+  <div class="case_box">
+    <div class="Htitle"><el-divider>案例展示</el-divider></div>
+    <el-row style="margin: 0; overflow: hidden;" >
+      <el-col :xs="24" :sm="6" :lg="6"  :xl="6" v-for="(item,index) in caseList" :key="index">
+        <!--         @mouseout="removeActive()"-->
+        <div class="case_img">
+          <img :src="item.caseImgName" alt="" >
+        </div>
+        <transition name="slide-fade">
+          <div  class="case_show" v-if="showDrawer" >
+            <div class="inside">
+              <div>
+                <img :src="item.code" alt="">
+                <div>{{item.look}}</div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </el-col>
+    </el-row>
+  </div>
+
 <!--功能-->
   <div class="block_box">
     <div class="Htitle"><el-divider>功能展示</el-divider></div>
@@ -107,50 +110,31 @@
         <div class="jou_left_box">
           <div class="jou_title">新闻动态</div>
           <div style="display: flex">
-            <div class="jou_img"></div>
+
+            <div class="jou_img"><img src="~assets/img/journalism1.png" alt=""></div>
             <div class="jou_likn">
               <ul>
-                <li>1111111</li>
-                <li>2222222222222222222222222222222222222222222222</li>
-                <li>33333333333333333333333333333333333333333333333</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
-                <li>555555555555555555555555555555555555555555555555</li>
+                <li>2019环球旅游小姐世界总决赛走进...</li>
+                <li>2019环球旅游小姐世界总决赛走进...</li>
+                <li>2019环球旅游小姐世界总决赛走进...</li>
+                <li>2019环球旅游小姐世界总决赛走进...</li>
+                <li>2019环球旅游小姐世界总决赛走进...</li>
+                <li>2019环球旅游小姐世界总决赛走进...</li>
+                <li>2019环球旅游小姐世界总决赛走进...</li>
+                <li>2019环球旅游小姐世界总决赛走进...</li>
               </ul>
             </div>
           </div>
-          <div style="text-align: right;margin-right: 20px">more></div>
+          <div class="jou_more">more></div>
         </div>
         <div class="jou_right_box">
           <div class="jou_title">最新活动</div>
-          <div class="activity_img"></div>
+          <div class="activity_img"><img src="~assets/img/journalism2.png" alt=""></div>
           <ul class="activity_likn">
-            <li>111111111111111111111111111111111111111111111111111111</li>
-            <li>111111111111111111111111111111111111111111111111111111</li>
-            <li>111111111111111111111111111111111111111111111111111111</li>
-            <li>111111111111111111111111111111111111111111111111111111</li>
-            <li>111111111111111111111111111111111111111111111111111111</li>
-            <li>111111111111111111111111111111111111111111111111111111</li>
-            <li>111111111111111111111111111111111111111111111111111111</li>
-            <li>111111111111111111111111111111111111111111111111111111</li>
-            <li>111111111111111111111111111111111111111111111111111111</li>
+            <li>积分商城上线啦</li>
+            <li>积分商城上线啦</li>
           </ul>
-          <div style="text-align: right;margin-right: 20px">more></div>
+          <div class="jou_more">more></div>
         </div>
   </div>
   </div>
@@ -203,12 +187,12 @@ export default {
         },
       },
       //案例
-      showDrawer:false, // 抽屉
+      showDrawer:false,
       caseList:[
-        {caseImgName:require('assets/img/timg.jpg'),casetext:'图片直播'},
-        {caseImgName:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),casetext:'图片直播'},
-        {caseImgName:require('assets/img/timg.jpg'),casetext:'图片直播'},
-        {caseImgName:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),casetext:'图片直播'},
+        {caseImgName:require('assets/img/case_img1.png'),casetext:'环球城市旅游小姐',look:'扫码观看',code:require('assets/img/case_img2.png')},
+        {caseImgName:require('assets/img/case_img2.png'),casetext:'环球旅游小姐世界赛',look:'扫码观看',code:require('assets/img/case_img2.png')},
+        {caseImgName:require('assets/img/case_img3.png'),casetext:'精英游艇模特大赛',look:'扫码观看',code:require('assets/img/case_img2.png')},
+        {caseImgName:require('assets/img/case_img4.png'),casetext:'全球城市旅游小姐',look:'扫码观看',code:require('assets/img/case_img2.png')},
       ],
     //  功能展示
       fcnlsit:[
@@ -223,9 +207,9 @@ export default {
       ],
     //  业务
       businessList:[
-        {busImgName:require('assets/img/timg.jpg'),bustext:'图片直播',type:'top'},
-        {busImgName:'图片直播',bustext:require('assets/img/7e2206d98ee54830ec73be8daad18632_wmk.jpeg'),type:'bottom'},
-        {busImgName:require('assets/img/timg.jpg'),bustext:'图片直播',type:'top'},
+        {busImgName:require('assets/img/business1.png'),bustext:'图片直播',type:'top'},
+        {busImgName:'图片直播',bustext:require('assets/img/business2.png'),type:'bottom'},
+        {busImgName:require('assets/img/business3.png'),bustext:'图片直播',type:'top'},
       ]
     }
   },
@@ -245,47 +229,7 @@ export default {
       ]
     }
   },
-  // beforeMount() {
-  //   this.screenWidth = this.getwidth();
-  //   //图片                高 / 宽  700 / 1920
-  //   this.bannerHeight = (700 / 1920) * this.screenWidth - 50;
-  //   console.log('bannerHeight', this.bannerHeight)
-  // },
-  // mounted() {
-  //   const that = this;
-  //   document.getElementById("el-carousel").style.height =
-  //     this.bannerHeight + "px";
-  //   //监听浏览器窗口大小改变
-  //   window.addEventListener(
-  //     "resize",
-  //     function () {
-  //       that.screenWidth = that.getwidth();
-  //       that.setSize();
-  //     },
-  //     false
-  //   );
-  //   $("body").append("1");
-  // },
   methods:{
-    getwidth() {
-      var width =
-        window.innerWidth ||
-        document.documentElement.clientWidth ||
-        document.body.clientWidth;
-      return width;
-    },
-
-    setSize: function () {
-      this.bannerHeight = (700 / 1920) * this.screenWidth - 50;
-      document.getElementById("el-carousel").style.height =
-        this.bannerHeight + "px";
-    },
-
-
-
-
-
-
 
     changeActive (index) {
       this.showDrawer = true
@@ -334,115 +278,46 @@ export default {
     left: 0;
     width: 100%;
   }
-  /*滑动的框*/
-
-  .swiper-wrapper{
-    width: 100%;
-    /*height:0;*/
-    padding-bottom:50%;
-    .swiper-slide{
-      /*display: flex;*/
-      .slide_tex{
-        flex: 1;
-        background: red;
-      }
-      .sliding_block_data{
-       flex: 1;
-        background: yellow;
-      }
-    }
-  }
-  /deep/ .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
-    background: url('~assets/img/sliding_l.png') no-repeat;
-    background-size: 100% 100%;
-    left: auto;
-    right:460px;
-    width:40px;
-    height:40px;
-    bottom: 44px;
-  }
-  /deep/ .swiper-button-next, .swiper-container-rtl .swiper-button-prev{
-    background: url('~assets/img/sliding_r.png') no-repeat;
-    background-size: 100% 100%;
-    right: 400px;
-    left: auto;
-    width:40px;
-    height:40px;
-    bottom: 44px;
-  }
-  /deep/ .swiper-button-prev, .swiper-button-next{
-    top: auto;
-  }
   /*案例*/
-
-  /* 媒体查询*/
-  @media screen and (max-width: 768px) {
-    .case_box_fu{
-      padding: 10px;
-    }
-  }
-  .case_box_show{
-    width: 100%;
-    height: 350px;
-    margin: 0 1px;
-    background: yellow;
-    position: relative;
-    overflow: hidden;
-    img{
-      width: 100%;
-      height: 100%;
-    }
-  }
   .case_box{
     width: 100%;
-    height: 350px;
-    margin: 0 1px;
-    background: red;
-    position: absolute;
-    z-index: 9999;
-    img{
-      width: 100%;
-      height: 100%;
+    .case_img{
+      width:100%;
+      height:400px;
+      padding: 6px;
+      img{
+        width: 100%;
+        height: 100%;
+      }
     }
-  }
-  .editor_title{
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    background: yellow;
-  }
-  .editor{
-    width:  100%;
-    margin: 0 auto;
-    text-align: left;
-  }
-
-
-  /* 可以设置不同的进入和离开动画 */
-  /* 设置持续时间和动画函数 */
-
-  .slide-img-enter-active {
-    transition: all .5s ease;
-  }
-  .slide-img-leave-active {
-    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  }
-  .slide-img-enter, .slide-img-leave-to/* .slide-fade-leave-active for below version 2.1.8 */ {
-    transform: translateY(-1000px);
-    opacity: 0;
-  }
-
-
-
-  .slide-fade-enter-active {
-    transition: all .5s ease;
-  }
-  .slide-fade-leave-active {
-    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  }
-  .slide-fade-enter, .slide-fade-leave-to/* .slide-fade-leave-active for below version 2.1.8 */ {
-    transform: translateY(1000px);
-    opacity: 0;
+    .slide-fade-enter-active {
+      transition: all .5s ease;
+    }
+    .slide-fade-leave-active {
+      transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+    .slide-fade-enter, .slide-fade-leave-to/* .slide-fade-leave-active for below version 2.1.8 */ {
+      transform: translateY(1000px);
+      opacity: 0;
+    }
+    .case_show{
+      width:100%;
+      height:400px;
+      padding: 6px;
+      .inside{
+        width: 100%;
+        height: 100%;
+        background: #FD578E;
+        display: flex;
+        div{
+          margin: auto;
+        }
+        img{
+          width: 50%;
+          margin-bottom: 10px;
+        }
+      }
+    }
   }
 /*  功能展示*/
   .fun_quan{
@@ -452,11 +327,10 @@ export default {
     background: #FD578E;
     text-align: center;
     margin: auto auto;
-    display: flex;
+    line-height: 100px
   }
   .fcn_img{
     width: 50%;
-    margin: auto;
   }
   .fcn_box{
     text-align: center;
@@ -475,7 +349,6 @@ export default {
 
   .business_box{
     width: 100%;
-    height:866px;
     padding: 137px 0 104px 0;
     background:rgba(241,241,241,1);
     .Htitle /deep/ .el-divider__text{
@@ -537,9 +410,12 @@ export default {
       .jou_img{
         width: 389px;
         height: 264px;
-        background: red;
         display: block;
         margin-right: 10px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
       }
       .jou_likn{
         width: 200px;
@@ -565,11 +441,22 @@ export default {
     .activity_img{
       width: 100%;
       height: 150px;
-      background: red;
+      img{
+        width: 100%;
+        height: 100%;
+      }
     }
     .activity_likn{
       height: 98px;
       overflow: hidden;
+    }
+    .jou_more{
+      text-align: right;
+      margin-right: 20px;
+    }
+    .jou_more:hover,li:hover{
+      color: #FD578E;
+      cursor: pointer;
     }
   }
 /*  新闻的媒体查询*/
